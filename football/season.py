@@ -21,13 +21,13 @@ def generate_rand_games(n=15):
         # Give each team a random number (from 0 to 3) of each:
         # touchdowns, field goals and safety
 
-        for i in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.field_goal(game.teams[0])
             game.touchdown(game.teams[1])
             game.safety(game.teams[0])
 
 
-        for j in list(range(randint(0, 4))):
+        for _ in list(range(randint(0, 4))):
             game.field_goal(game.teams[1])
             game.touchdown(game.teams[0])
             game.safety(game.teams[1])

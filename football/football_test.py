@@ -43,10 +43,16 @@ class FootballPlayerTest(unittest.TestCase):
     def test_passing_score(self):
         qb = Quarterback()
         self.assertEqual((20 - (2 * 4)), qb.passing_score())
+        qb1 = Quarterback(completed_passes= 40, interceptions = 2)
+        self.assertEqual((40 - (2 * 2)), qb1.passing_score())
 
-    def test_passing_score(self):
-        qb = Quarterback(completed_passes= 40, interceptions = 2)
-        self.assertEqual((40 - (2 * 2)), qb.passing_score())
+class TeamsTest(unittest.TestCase):
+    '''Check lengths of team names, locations, and weeks
+    '''
+    def test_teams_lengths(self):
+        self.assertEqual(len(team_names), 5)
+        self.assertEqual(len(locations), 5)
+        self.assertEqual(len(weeks), 12)
 
 if __name__ == '__main__':
     unittest.main()

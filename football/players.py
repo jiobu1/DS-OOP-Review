@@ -1,3 +1,5 @@
+#players.py
+
 '''Player class to record stats for individual players
 '''
 
@@ -30,7 +32,7 @@ class Quarterback(Player):
     functionality unique to quarterbacks
     '''
     def __init__(self, name=None, yards=130, touchdowns=5, completed_passes=20,
-                 interceptions=4, safety=None, field_goals=None):
+                 interceptions=10, safety=None, field_goals=None):
         super().__init__(name=name, yards=yards, touchdowns=touchdowns,
                          safety=safety, interceptions=interceptions)
         self.completed_passes = completed_passes
@@ -41,5 +43,12 @@ class Quarterback(Player):
         score = self.completed_passes - (2 * self.interceptions)
         return score
 
-# TODO - refine the default player stats and/or make a defensive player default
-# with number of tackles, sacks, interceptions etc.
+class DefensivePlayer(Player):
+    # TODO - refine the default player stats and/or make a defensive player default
+    # with number of tackles, sacks, interceptions etc.
+    def __init__(self, name=None, yards=120, touchdowns=5, interceptions=4, safety=None, field_goals=None,
+                    tackles=5, sacks=100):
+        super().__init__(name=name, yards=yards, touchdowns=touchdowns,
+                         safety=safety, interceptions=interceptions)
+
+

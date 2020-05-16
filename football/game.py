@@ -6,7 +6,6 @@ import random
 
 class Game:
     '''Models a football game.
-
     Parameters
     -----------------------------
     teams : list
@@ -18,7 +17,6 @@ class Game:
         value - score for the team
     week : int
         week number during the season
-
     Attributes - only shows up after you run get_winning_team
     -----------------------------
     winning_team_ : str
@@ -62,8 +60,18 @@ class Game:
         else:
             self.score[team] += 3
 
-    def safety(self, TODO):
-        pass  # TODO (a safety is worth 2 points)
+    def safety(self, team):
+        '''record safety for a team
+        Parameters
+        -----------------------------
+        team : str
+            team that scored
+        '''
+        if team not in self.teams:
+            raise ValueError('team parameter must be in self.teams')
+        else:
+            self.score[team] += 2
+            # self.score[team] = self.score[team] + 2
 
     def get_winning_team(self):
         '''When game is done, this can be run to add attributes
